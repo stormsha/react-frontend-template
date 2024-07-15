@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Layout, theme } from "antd";
 import { Outlet } from "react-router-dom";
-import MainMenu from "@/views/Layout/MainMenu";
-import MainBreadcrumbs from "@/views/Layout/MainBreadcrumbs";
-import UserInfo from "@/views/Layout/UserInfo";
+import MainMenu from "@/pages/Layout/MainMenu";
+import MainBreadcrumbs from "@/pages/Layout/MainBreadcrumbs";
+import UserInfo from "@/pages/Layout/UserInfo";
 import logo from "@/assets/react.svg";
 
 const { Header, Content, Footer, Sider } = Layout;

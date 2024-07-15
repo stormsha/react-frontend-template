@@ -1,20 +1,20 @@
 import React, { lazy } from "react";
-import Top from "@/views/Layout/Top";
-import Login from "@/views/Login";
-import SkeletonLoading from "@/views/SkeletonLoading";
+import Top from "@/pages/Layout/Top";
+import Login from "@/pages/Login";
+import SkeletonLoading from "@/pages/SkeletonLoading";
 import { Navigate } from "react-router-dom";
 import { routesType } from "@/types/route";
 
-const Error404 = lazy(() => import("@/views/Error/404"));
-const About = lazy(() => import("@/views/About"));
-const Page = lazy(() => import("@/views/Page"));
-const Menu = lazy(() => import("@/views/User/Menu"));
-const User02 = lazy(() => import("@/views/User/User02"));
-const User03 = lazy(() => import("@/views/User/User03"));
-const Files = lazy(() => import("@/views/Files"));
-const Team01 = lazy(() => import("@/views/Team/Team01"));
-const Team02 = lazy(() => import("@/views/Team/Team02"));
-const Home = lazy(() => import("@/views/Home"));
+const Error404 = lazy(() => import("@/pages/Error/404"));
+const About = lazy(() => import("@/pages/About"));
+const Page = lazy(() => import("@/pages/Page"));
+const Menu = lazy(() => import("@/pages/User/Menu"));
+const User02 = lazy(() => import("@/pages/User/User02"));
+const User03 = lazy(() => import("@/pages/User/User03"));
+const Files = lazy(() => import("@/pages/Files"));
+const Team01 = lazy(() => import("@/pages/Team/Team01"));
+const Team02 = lazy(() => import("@/pages/Team/Team02"));
+const Home = lazy(() => import("@/pages/Home"));
 
 const withLoadingComponent = (Comp: JSX.Element) => (
   <React.Suspense fallback={<SkeletonLoading />}>{Comp}</React.Suspense>

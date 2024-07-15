@@ -1,17 +1,11 @@
-import { Table } from "antd";
+import {Table} from "antd";
 import type {
-  // ColumnsType,
-  TableProps,
+    TableProps,
 } from "antd/es/table";
 
-// interface CustomTableProps<T> extends TableProps<T> {
-//   columns: ColumnsType<T>;
-// }
 
 type CustomTableProps<T> = TableProps<T>;
 
-const CustomTable = <T extends object = any>({
-  ...restProps
-}: CustomTableProps<T>) => <Table<T> {...restProps} />;
+const CustomTable = <T extends object = any>({...props}: CustomTableProps<T>) => <Table<T> {...props} />;
 
 export default CustomTable;
