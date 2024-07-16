@@ -3,7 +3,7 @@ import { HomeOutlined } from "@ant-design/icons";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import routes from "@/router";
-import { setBreadcrumbItems } from "@/utils/pages/breadcrumbItems";
+import { setBreadcrumbItems } from "@/utils/breadcrumbItems.tsx";
 
 const MainBreadcrumbs = () => {
   const location = useLocation();

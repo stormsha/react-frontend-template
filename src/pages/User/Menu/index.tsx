@@ -1,7 +1,8 @@
 import Table from "@/components/Table";
-import { Space, Tag } from "antd";
+import {Space, Tag} from "antd";
 
-import { DataType, ColumnsType } from "@/types/table";
+import {DataType, ColumnsType} from "@/types/table";
+import React from "react";
 
 const columns: ColumnsType<DataType> = [
   {
@@ -24,7 +25,7 @@ const columns: ColumnsType<DataType> = [
     title: "Tags",
     key: "tags",
     dataIndex: "tags",
-    render: (_, { tags }) => (
+    render: (_, {tags}) => (
       <>
         {tags.map((tag) => {
           let color = tag.length > 5 ? "geekblue" : "green";
@@ -78,8 +79,7 @@ const data: DataType[] = [
 
 const Menu: React.FC = () => (
   <>
-  
-  <Table<DataType> columns={columns} dataSource={data} />
+    <Table<DataType> columns={columns} dataSource={data}/>
   </>
 );
 

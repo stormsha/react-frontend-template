@@ -16,6 +16,13 @@ API 服务需要的功能模块整理为一个基础项目模板，用来帮助�
 - [x] Vite：[https://vitejs.dev/](https://vitejs.dev/)
 - [x] Typescript：[https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 
+### 功能模块
+
+- 路由
+- 组件
+- fetch封装
+- mock（TODO）
+
 ## 如何使用?
 
 确保已经安装 [Node](https://nodejs.org/zh-cn) >= 16.x
