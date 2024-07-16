@@ -26,10 +26,9 @@ API 服务需要的功能模块整理为一个基础项目模板，用来帮助�
 git clone https://github.com/stormsha/react-frontend-template.git
 ```
 
-2. 下载项目依赖
+2. 进入项目根目录下载依赖
 
 ```bash
-cd 项目
 npm install
 ```
 

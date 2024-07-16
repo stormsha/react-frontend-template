@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import ReactDOM from "react-dom";
 import { Column } from "@ant-design/plots";
 
 const DemoColumn = () => {
@@ -29,9 +28,7 @@ const DemoColumn = () => {
       radius: [20, 20, 0, 0],
     },
   };
-
   return <Column style={{height: '99%'}} {...config} />;
 };
 
 export default DemoColumn;
-// ReactDOM.render(<DemoColumn />, document.getElementById('container'));

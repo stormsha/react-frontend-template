@@ -1,7 +1,7 @@
 import Pie from "./Pie";
 import Column from "./Column";
 import VersionMessage from "./VersionMessage";
-import { Card, Avatar } from "antd";
+import {Card, Avatar} from "antd";
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -25,58 +25,60 @@ const cardTitleItems = [
   {
     avatar: (
       <Avatar
-        style={{ backgroundColor: "#41486c" }}
-        icon={<HomeOutlined style={{ color: "#ffffff" }} />}
+        style={{backgroundColor: "#41486c"}}
+        icon={<HomeOutlined style={{color: "#ffffff"}}/>}
       />
     ),
     title: "Home",
     description: "This is the Home",
-    hoverable: true,
+    hoverAble: true,
   },
   {
     avatar: (
       <Avatar
-        style={{ backgroundColor: "#41486c" }}
-        icon={<PieChartOutlined style={{ color: "#ffffff" }} />}
+        style={{backgroundColor: "#41486c"}}
+        icon={<PieChartOutlined style={{color: "#ffffff"}}/>}
       />
     ),
     title: "About",
     description: "This is the About",
-    hoverable: true,
+    hoverAble: true,
   },
   {
     avatar: (
       <Avatar
-        style={{ backgroundColor: "#41486c" }}
-        icon={<DesktopOutlined style={{ color: "#ffffff" }} />}
+        style={{backgroundColor: "#41486c"}}
+        icon={<DesktopOutlined style={{color: "#ffffff"}}/>}
       />
     ),
     title: "Page",
     description: "This is the Page",
-    hoverable: true,
+    hoverAble: true,
   },
   {
     avatar: (
       <Avatar
-        style={{ backgroundColor: "#41486c" }}
-        icon={<UserOutlined style={{ color: "#ffffff" }} />}
+        style={{backgroundColor: "#41486c"}}
+        icon={<UserOutlined style={{color: "#ffffff"}}/>}
       />
     ),
     title: "User",
     description: "This is the User",
-    hoverable: true,
+    hoverAble: true,
   },
 ];
 
 export const Home = () => {
-  const { homeBox, homeBoxAvatar } = styled;
+  const {homeBox, homeBoxAvatar} = styled;
   return (
     <div className={homeBox}>
       <Card
-        style={{ marginBottom: "10px" }}
-        bodyStyle={{
-          display: "flex",
-          justifyContent: "space-between",
+        style={{marginBottom: "10px"}}
+        styles={{
+          body: {
+            display: "flex",
+            justifyContent: "space-between",
+          },
         }}
         className={homeBoxAvatar}
       >
@@ -84,7 +86,7 @@ export const Home = () => {
           return (
             <Card
               key={index}
-              hoverable={item.hoverable}
+              hoverable={item.hoverAble}
               style={cardTitleItemsStyle}
             >
               <Card.Meta
@@ -97,21 +99,25 @@ export const Home = () => {
         })}
       </Card>
       <Card
-        style={{ boxShadow: "none", marginBottom: "10px" }}
+        style={{boxShadow: "none", marginBottom: "10px"}}
         bordered={false}
-        bodyStyle={{
-          display: "block",
-        }}
+        styles={
+          {
+            body: {
+              display: "block",
+            }
+          }
+        }
       >
-        <Card.Grid style={{ ...gridStyle, float: "left" }}>
-          <Column />
+        <Card.Grid style={{...gridStyle, float: "left"}}>
+          <Column/>
         </Card.Grid>
-        <Card.Grid style={{ ...gridStyle, float: "right" }}>
-          <Pie />
+        <Card.Grid style={{...gridStyle, float: "right"}}>
+          <Pie/>
         </Card.Grid>
       </Card>
       <Card hoverable title="Version Message List">
-        <VersionMessage />
+        <VersionMessage/>
       </Card>
     </div>
   );
