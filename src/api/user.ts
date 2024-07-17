@@ -5,7 +5,7 @@ interface ApiData {
     [key: string]: any;
 }
 
-// 示例用户 API
+// 用户 API
 const userApi = {
     // 获取用户信息
     getUserInfo: (userId: string) => {
