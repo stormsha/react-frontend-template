@@ -1,21 +1,26 @@
-import React, { useState } from "react";
-import { Layout, theme } from "antd";
-import { Outlet } from "react-router-dom";
+import React, {useState} from "react";
+import {Layout, theme} from "antd";
+import {Outlet} from "react-router-dom";
 import MainMenu from "@/pages/Layout/MainMenu";
 import MainBreadcrumbs from "@/pages/Layout/MainBreadcrumbs";
 import UserInfo from "@/pages/Layout/UserInfo";
 import logo from "@/assets/react.svg";
 
-const { Header, Content, Footer, Sider } = Layout;
+const {
+  Header,
+  Content,
+  Footer,
+  Sider
+} = Layout;
 
 const View: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
-    token: { colorBgContainer },
+    token: {colorBgContainer},
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout style={{minHeight: "100vh"}}>
       {/* 左边侧边栏 */}
       <Sider
         collapsible
@@ -33,10 +38,10 @@ const View: React.FC = () => {
             alignItems: "center",
           }}
         >
-          <img src={logo} alt="" sizes="" style={{ height: "30px" }} />
+          <img src={logo} alt="" sizes="" style={{height: "30px"}}/>
         </div>
         {/* 菜单栏 */}
-        <MainMenu />
+        <MainMenu/>
       </Sider>
       {/* 右边内容 */}
       <Layout>
@@ -51,13 +56,13 @@ const View: React.FC = () => {
           }}
         >
           {/* 顶部面包屑导航 */}
-          <MainBreadcrumbs />
+          <MainBreadcrumbs/>
           {/* 个人信息和退出登录 */}
-          <UserInfo />
+          <UserInfo/>
         </Header>
         {/* 右边主体内容 */}
         <Content
-          style={{ margin: "16px 16px 0 16px", background: colorBgContainer }}
+          style={{margin: "16px 16px 0 16px", background: colorBgContainer}}
         >
           <div
             style={{
@@ -65,12 +70,11 @@ const View: React.FC = () => {
               minHeight: 360,
             }}
           >
-            {/* Bill is a cat. */}
-            <Outlet />
+            <Outlet/>
           </div>
         </Content>
         {/* 右边底部 */}
-        <Footer style={{ textAlign: "center", padding: 0, lineHeight: "48px" }}>
+        <Footer style={{textAlign: "center", padding: 0, lineHeight: "48px"}}>
           Ant Design ©2023 Created by Ant UED
         </Footer>
       </Layout>

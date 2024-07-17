@@ -1,9 +1,10 @@
-import React, { lazy } from "react";
+import React, {lazy} from "react";
 import Top from "@/pages/Layout/Top";
 import Login from "@/pages/Login";
 import SkeletonLoading from "@/pages/SkeletonLoading";
-import { Navigate } from "react-router-dom";
-import { routesType } from "@/types/route";
+import {Navigate} from "react-router-dom";
+import {routesType} from "@/types/route";
+import {getCookie} from "@/utils/cookies.ts";
 
 const Error404 = lazy(() => import("@/pages/Error/404"));
 const About = lazy(() => import("@/pages/About"));
@@ -16,53 +17,60 @@ const Team01 = lazy(() => import("@/pages/Team/Team01"));
 const Team02 = lazy(() => import("@/pages/Team/Team02"));
 const Home = lazy(() => import("@/pages/Home"));
 
-const withLoadingComponent = (Comp: JSX.Element) => (
-  <React.Suspense fallback={<SkeletonLoading />}>{Comp}</React.Suspense>
-);
+const withLoadingComponent = (Comp: JSX.Element) => {
+  const token = getCookie('token');
+  if (!token) {
+    return <Navigate to="/login"/>;
+  }
+  return (
+    <React.Suspense fallback={<SkeletonLoading/>}>{Comp}</React.Suspense>
+  )
+};
+
 const routes: routesType[] = [
   {
     path: "/",
-    element: <Navigate to="/home" />,
+    element: <Navigate to="/home"/>,
   },
   {
     path: "*",
-    element: <Navigate to="/404" />,
+    element: <Navigate to="/404"/>,
   },
   {
     path: "/404",
-    element: <Error404 />,
+    element: <Error404/>,
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <Login/>,
   },
   {
     path: "/",
-    element: <Top />,
+    element: <Top/>,
     exact: true,
     name: "menuRoutes",
     children: [
       {
         path: "/home",
-        element: withLoadingComponent(<Home />),
+        element: withLoadingComponent(<Home/>),
       },
       {
         path: "/about",
-        element: withLoadingComponent(<About />),
+        element: withLoadingComponent(<About/>),
         meta: {
           title: "About",
         },
       },
       {
         path: "/page",
-        element: withLoadingComponent(<Page />),
+        element: withLoadingComponent(<Page/>),
         meta: {
           title: "Page",
         },
       },
       {
         path: "/files",
-        element: withLoadingComponent(<Files />),
+        element: withLoadingComponent(<Files/>),
         meta: {
           title: "Files",
         },
@@ -75,21 +83,21 @@ const routes: routesType[] = [
         children: [
           {
             path: "/user/menu",
-            element: withLoadingComponent(<Menu />),
+            element: withLoadingComponent(<Menu/>),
             meta: {
               title: "Menu",
             },
           },
           {
             path: "/user/user-02",
-            element: withLoadingComponent(<User02 />),
+            element: withLoadingComponent(<User02/>),
             meta: {
               title: "User02",
             },
           },
           {
             path: "/user/user-03",
-            element: withLoadingComponent(<User03 />),
+            element: withLoadingComponent(<User03/>),
             meta: {
               title: "User03",
             },
@@ -104,14 +112,14 @@ const routes: routesType[] = [
         children: [
           {
             path: "/team/team-01",
-            element: withLoadingComponent(<Team01 />),
+            element: withLoadingComponent(<Team01/>),
             meta: {
               title: "Team01",
             },
           },
           {
             path: "/team/team-02",
-            element: withLoadingComponent(<Team02 />),
+            element: withLoadingComponent(<Team02/>),
             meta: {
               title: "Team02",
             },
